@@ -1,8 +1,9 @@
 # PowerShell scripts for Oculus
 
 ## Usage
-1. Open PowerShell as admin (for some scripts).
-2. Use scripts as shown below:
+1. Change the path in `paths.psm1` to point to your installation.
+2. Open PowerShell as admin (for some scripts).
+3. Use scripts as shown below:
 
 ```powershell
 PS > .\EnableASW.ps1
