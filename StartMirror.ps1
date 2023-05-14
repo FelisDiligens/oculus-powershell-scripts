@@ -1,7 +1,7 @@
 param (
     [int]$Width = 1280,
-    [int]$Height = 720,
-    [double]$FOVMultiplier = 1.0
+    [int]$Height = 1280,
+    [double]$FOVMultiplier = 1.3
 )
 
 # PS> .\StartMirror.ps1 1280 720 1.0
@@ -9,6 +9,7 @@ param (
 # https://developer.oculus.com/documentation/native/pc/dg-compositor-mirror/
 
 Import-Module .\odt.psm1 -Force
+Import-Module .\paths.psm1 -Force
 
 # Only continue if Oculus is actually running:
 $isRunning = ODTIsOculusRunning
@@ -19,7 +20,7 @@ if ( !$isRunning ) {
     exit
 }
 
-$MIRROR_EXEC = "C:\Program Files\Oculus\Support\oculus-diagnostics\OculusMirror.exe"
+$MIRROR_EXEC = "$OCULUS_PATH\Support\oculus-diagnostics\OculusMirror.exe"
 
 if ($FOVMultiplier -lt 0) {
     Write-Host "[!] Invalid FOV multiplier. Multiplier must be greater than 0." -ForegroundColor Red -BackgroundColor Black
@@ -29,5 +30,6 @@ if ($FOVMultiplier -lt 0) {
 
 Write-Host "[*] Starting Mirror..."
 & $MIRROR_EXEC --Size $Width $Height --FovTanAngleMultiplier $FOVMultiplier $FOVMultiplier --DisableTimewarp --RightEyeOnly --IncludeSystemGui --IncludeNotifications --SymmetricFov --DisableFovStencil
+# --IncludeGuardian
 
 Write-Host "[i] Done." -ForegroundColor Green

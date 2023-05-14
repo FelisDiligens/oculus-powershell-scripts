@@ -1,4 +1,6 @@
-$ODT_PATH = "C:\Program Files\Oculus\Support\oculus-diagnostics\OculusDebugToolCLI.exe"
+Import-Module .\paths.psm1 -Force
+
+$ODT_PATH = "$OCULUS_PATH\Support\oculus-diagnostics\OculusDebugToolCLI.exe"
 
 # How does it work?
 # * Write arguments (and 'exit') to a text file

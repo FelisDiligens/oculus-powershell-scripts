@@ -35,8 +35,8 @@ if (!((Get-Item $Path) -is [System.IO.DirectoryInfo])) {
 if (!((Test-Path ".\OpenComposite\openvr_api_x64.dll") -and (Test-Path ".\OpenComposite\openvr_api_x86.dll"))) {
     New-Item -ItemType Directory -Force -Path ".\OpenComposite"
     Write-Host "[*] Downloading DLL files"
-    Invoke-WebRequest -Uri "https://znix.xyz/OpenComposite/download.php?arch=x86" -OutFile ".\OpenComposite\openvr_api_x86.dll"
-    Invoke-WebRequest -Uri "https://znix.xyz/OpenComposite/download.php?arch=x64" -OutFile ".\OpenComposite\openvr_api_x64.dll"
+    Invoke-WebRequest -Uri "https://znix.xyz/OpenComposite/download.php?arch=x86&branch=openxr" -OutFile ".\OpenComposite\openvr_api_x86.dll"
+    Invoke-WebRequest -Uri "https://znix.xyz/OpenComposite/download.php?arch=x64&branch=openxr" -OutFile ".\OpenComposite\openvr_api_x64.dll"
 }
 
 # Get MD5 hashes for later

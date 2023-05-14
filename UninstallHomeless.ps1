@@ -1,4 +1,6 @@
-$HOME2_PATH = "C:\Program Files\Oculus\Support\oculus-worlds\Home2\Binaries\Win64\"
+Import-Module .\paths.psm1 -Force
+
+$HOME2_PATH = "$OCULUS_PATH\Support\oculus-worlds\Home2\Binaries\Win64\"
 $EXEC_PATH = $HOME2_PATH + "Home2-Win64-Shipping.exe"
 $BGCOLOR_PATH = $HOME2_PATH + "background_color.txt"
 

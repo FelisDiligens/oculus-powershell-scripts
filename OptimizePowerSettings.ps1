@@ -10,4 +10,4 @@ powercfg /SETACVALUEINDEX SCHEME_CURRENT 2a737441-1930-4402-8d77-b2bebba308a3 48
 
 # Disable selective suspend (USB) by creating registry key
 # Source: http://9b5.org/2011/10/windows-disable-usb-power-saving-disableselectivesuspend/
-New-ItemProperty -Path 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USB' -Name 'DisableSelectiveSuspend' -PropertyType DWORD -Value 1 -Force
+New-ItemProperty -Path "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USB" -Name "DisableSelectiveSuspend" -PropertyType DWORD -Value 1 -Force
