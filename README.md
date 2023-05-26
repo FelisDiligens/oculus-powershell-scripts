@@ -41,6 +41,10 @@ My script also sets the background to black.
 
 Please read this: https://www.reddit.com/r/oculus/comments/8uf1sm/oculushomeless_use_dash_without_home_20/
 
+> There seems to be newer projects available for the same purpose:
+> - [OculusKiller](https://github.com/LibreQuest/OculusKiller)
+> - [Oculus VR Dash Manager](https://github.com/KrisIsBackAU/Oculus-VR-Dash-Manager)
+
 ### What is OpenComposite?
 OpenComposite is an implementation of SteamVR's API - OpenVR, forwarding calls directly to the Oculus runtime.
 Think of it as a backwards version of ReVive, for the Rift.
@@ -49,6 +53,11 @@ This allows you to play SteamVR-based games on an Oculus Rift as though they wer
 the use of SteamVR!
 
 Please read this: https://gitlab.com/znixian/OpenOVR/blob/master/README.md
+
+> There's a newer OpenComposite version available that supports OpenXR: https://gitlab.com/znixian/OpenOVR/-/tree/openxr  
+> My script still uses the deprecated Oculus only version.
+
+> Some games support a `-vrmode oculus` switch, such as Beat Saber and Blade & Sorcery, so you don't need OpenComposite all the time.
 
 #### Which path to give to the script?
 The script looks recursively (in subdirectories) for "openvr_api.dll" files and replaces them.
