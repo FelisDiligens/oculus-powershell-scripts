@@ -9,7 +9,7 @@ param (
 # https://developer.oculus.com/documentation/native/pc/dg-compositor-mirror/
 
 Import-Module .\odt.psm1 -Force
-Import-Module .\paths.psm1 -Force
+$paths = Import-PowerShellDataFile .\paths.psd1
 
 # Only continue if Oculus is actually running:
 $isRunning = ODTIsOculusRunning
@@ -20,7 +20,7 @@ if ( !$isRunning ) {
     exit
 }
 
-$MIRROR_EXEC = "$OCULUS_PATH\Support\oculus-diagnostics\OculusMirror.exe"
+$MIRROR_EXEC = "$($paths.OCULUS_PATH)\Support\oculus-diagnostics\OculusMirror.exe"
 
 if ($FOVMultiplier -lt 0) {
     Write-Host "[!] Invalid FOV multiplier. Multiplier must be greater than 0." -ForegroundColor Red -BackgroundColor Black

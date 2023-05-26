@@ -8,7 +8,7 @@ if ( !$HasAdminRights ) {
 }
 
 Import-Module .\odt.psm1 -Force
-Import-Module .\paths.psm1 -Force -Global
+$paths = Import-PowerShellDataFile .\paths.psd1
 
 # Is Oculus running?
 $isRunning = ODTIsOculusRunning
@@ -22,8 +22,7 @@ if ( $isRunning ) {
 # https://www.reddit.com/r/oculus/comments/8uf1sm/oculushomeless_use_dash_without_home_20/
 # http://www.emuvr.net/download/OculusHomeless.zip
 
-# $HOME2_PATH = "C:\Program Files\Oculus\Support\oculus-worlds\Home2\Binaries\Win64\"
-$HOME2_PATH = "$OCULUS_PATH\Support\oculus-worlds\Home2\Binaries\Win64\"
+$HOME2_PATH = "$($paths.OCULUS_PATH)\Support\oculus-worlds\Home2\Binaries\Win64\"
 $EXEC_PATH = $HOME2_PATH + "Home2-Win64-Shipping.exe"
 $REPL_PATH = ".\OculusHomeless\Home2-Win64-Shipping.exe"
 $BGCOLOR_PATH = $HOME2_PATH + "background_color.txt"
@@ -79,7 +78,7 @@ if ($homeless_hash.Hash -eq $installed_exec_hash.Hash) {
 # Create a "background_color.txt" file, if it doesn't exist:
 if (!(Test-Path $BGCOLOR_PATH)) {
     Write-Host "[*] Setting background color to black."
-    echo "0.0 0.0 0.0" | Out-File -FilePath $BGCOLOR_PATH
+    Write-Output "0.0 0.0 0.0" | Out-File -FilePath $BGCOLOR_PATH
 }
 
 # Clean up:

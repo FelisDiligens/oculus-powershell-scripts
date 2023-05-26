@@ -1,6 +1,6 @@
-Import-Module .\paths.psm1 -Force
+$paths = Import-PowerShellDataFile .\paths.psd1
 
-$ODT_PATH = "$OCULUS_PATH\Support\oculus-diagnostics\OculusDebugToolCLI.exe"
+$ODT_PATH = "$($paths.OCULUS_PATH)\Support\oculus-diagnostics\OculusDebugToolCLI.exe"
 
 # How does it work?
 # * Write arguments (and 'exit') to a text file

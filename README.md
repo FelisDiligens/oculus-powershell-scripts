@@ -1,7 +1,7 @@
 # PowerShell scripts for Oculus
 
 ## Usage
-1. Change the path in `paths.psm1` to point to your installation.
+1. Change the path in `paths.psd1` to point to your installation.
 2. Open PowerShell as admin (for some scripts).
 3. Use scripts as shown below:
 
