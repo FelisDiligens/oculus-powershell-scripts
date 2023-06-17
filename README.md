@@ -1,9 +1,10 @@
 # PowerShell scripts for Oculus
 
 ## Usage
-1. Change the path in `paths.psd1` to point to your installation.
-2. Open PowerShell as admin (for some scripts).
-3. Use scripts as shown below:
+1. Clone the repo or download it as \*.zip
+2. Change the path in `paths.psd1` to point to your installation.
+3. Open PowerShell as admin (for some scripts).
+4. Use scripts as shown below:
 
 ```powershell
 PS > .\EnableASW.ps1
@@ -48,7 +49,7 @@ Read more about it here: [LibreQuest/OculusKiller](https://github.com/LibreQuest
 
 There's a UI that let's you install/manage it easily: [Oculus VR Dash Manager](https://github.com/KrisIsBackAU/Oculus-VR-Dash-Manager)
 
-Use OculusKiller if you want to kill the Dash.
+Use OculusKiller if you want to kill the Dash. (This will also disable passthrough and the grid!)
 
 ### What is OpenComposite?
 
