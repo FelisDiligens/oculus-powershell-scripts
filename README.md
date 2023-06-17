@@ -12,6 +12,9 @@ PS > .\DisableASW.ps1
 PS > .\InstallHomeless.ps1
 PS > .\UninstallHomeless.ps1
 
+PS > .\InstallOculusKiller.ps1
+PS > .\UninstallOculusKiller.ps1
+
 PS > .\InstallOpenComposite.ps1 -Path "C:\Program Files (x86)\Steam\steamapps\common\Beat Saber"
 PS > .\UninstallOpenComposite.ps1 -Path "C:\Program Files (x86)\Steam\steamapps\common\Beat Saber"
 
@@ -22,30 +25,35 @@ PS > .\StartMirror -Width 1920 -Height 1080 -FOVMultiplier 1.5
 
 PS > .\StopOculusRuntime.ps1
 
-PS > .\OptimizePowerSettings.ps1
-
 PS > .\EnableOculusServicesAutoStart.ps1
 PS > .\DisableOculusServicesAutoStart.ps1
 ```
 
 ## Explanations
 
-> **Warning** This info is old, here be dragons.
-
 ### Will there be a GUI?
 No, sorry. Check out [Oculus Tray Tool by ApollyonVR](https://www.apollyonvr.com/oculus-tray-tool) ([Forum](https://communityforums.atmeta.com/t5/Talk-VR/Oculus-TrayTool-SuperSampling-profiles-HMD-disconnect-fixes/td-p/523754)), if you feel uncomfortable with the shell.
 
 ### What is Homeless?
-Homeless replaces Oculus Home and just renders a blank environment, using minimal resources.
+Homeless replaces Oculus Home and just renders a blank environment, using minimal resources.  
 My script also sets the background to black.
 
 Please read this: https://www.reddit.com/r/oculus/comments/8uf1sm/oculushomeless_use_dash_without_home_20/
 
-> There seems to be newer projects available for the same purpose:
-> - [OculusKiller](https://github.com/LibreQuest/OculusKiller)
-> - [Oculus VR Dash Manager](https://github.com/KrisIsBackAU/Oculus-VR-Dash-Manager)
+Use Homeless if you want to keep the Dash.
+
+### What is OculusKiller?
+OculusKiller (kinda) superseded Homeless. It "kills" the Dash completely and launches you instantly into SteamVR.  
+Read more about it here: [LibreQuest/OculusKiller](https://github.com/LibreQuest/OculusKiller#readme)
+
+There's a UI that let's you install/manage it easily: [Oculus VR Dash Manager](https://github.com/KrisIsBackAU/Oculus-VR-Dash-Manager)
+
+Use OculusKiller if you want to kill the Dash.
 
 ### What is OpenComposite?
+
+> **Warning** This info is old, here be dragons.
+
 OpenComposite is an implementation of SteamVR's API - OpenVR, forwarding calls directly to the Oculus runtime.
 Think of it as a backwards version of ReVive, for the Rift.
 
