@@ -31,7 +31,8 @@ $DL_PATH = "$DL_PARENT_PATH\OculusDash.exe"
 if (!(Test-Path $DL_PATH)) {
     Write-Host "[*] Downloading OculusDash.exe"
     New-Item -ItemType Directory -Name "$DL_PARENT_PATH"
-    Invoke-WebRequest -Uri "https://github.com/LibreQuest/OculusKiller/releases/download/v1.2.0/OculusDash.exe" -OutFile "$DL_PATH"
+    #Invoke-WebRequest -Uri "https://github.com/LibreQuest/OculusKiller/releases/download/v1.2.0/OculusDash.exe" -OutFile "$DL_PATH"
+    Invoke-WebRequest -Uri "https://github.com/LibreQuest/OculusKiller/releases/latest/download/OculusDash.exe" -OutFile "$DL_PATH"
 }
 
 # Generate hashes for comparison:
