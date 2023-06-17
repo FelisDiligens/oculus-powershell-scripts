@@ -8,7 +8,7 @@ if ( !$HasAdminRights ) {
 }
 
 Import-Module .\odt.psm1 -Force
-$paths = Import-PowerShellDataFile .\paths.psd1
+Import-Module .\paths.psm1 -Force -Global
 
 # Is Oculus running?
 $isRunning = ODTIsOculusRunning
@@ -22,7 +22,7 @@ if ( $isRunning ) {
 # https://www.reddit.com/r/oculus/comments/8uf1sm/oculushomeless_use_dash_without_home_20/
 # http://www.emuvr.net/download/OculusHomeless.zip
 
-$HOME2_PATH = "$($paths.OCULUS_PATH)\Support\oculus-worlds\Home2\Binaries\Win64\"
+$HOME2_PATH = "$OCULUS_PATH\Support\oculus-worlds\Home2\Binaries\Win64\"
 $EXEC_PATH = $HOME2_PATH + "Home2-Win64-Shipping.exe"
 $REPL_PATH = ".\OculusHomeless\Home2-Win64-Shipping.exe"
 $BGCOLOR_PATH = $HOME2_PATH + "background_color.txt"

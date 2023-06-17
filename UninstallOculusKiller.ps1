@@ -1,6 +1,6 @@
-$paths = Import-PowerShellDataFile .\paths.psd1
+Import-Module .\paths.psm1 -Force -Global
 
-$DASH_PARENT_PATH = "$($paths.OCULUS_PATH)\Support\oculus-dash\dash\bin"
+$DASH_PARENT_PATH = "$OCULUS_PATH\Support\oculus-dash\dash\bin"
 $DASH_PATH = "$DASH_PARENT_PATH\OculusDash.exe"
 $DASH_BACKUP_PATH = "$DASH_PARENT_PATH\OculusDash.exe.bak"
 

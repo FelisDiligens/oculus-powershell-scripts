@@ -1,8 +1,8 @@
 # PowerShell scripts for Oculus
 
 ## Usage
-1. Clone the repo or download it as \*.zip
-2. Change the path in `paths.psd1` to point to your installation.
+1. Clone the repo or download it as \*.zip.
+2. _(You might have to change the path in `paths.psm1` to point to your installation, if `%OCULUSBASE%` environment variable isn't set.)_
 3. Open PowerShell as admin (for some scripts).
 4. Use scripts as shown below:
 

@@ -8,7 +8,7 @@ if ( !$HasAdminRights ) {
 }
 
 Import-Module .\odt.psm1 -Force
-$paths = Import-PowerShellDataFile .\paths.psd1
+Import-Module .\paths.psm1 -Force -Global
 
 # Is Oculus running?
 $isRunning = ODTIsOculusRunning
@@ -19,7 +19,7 @@ if ( $isRunning ) {
     exit
 }
 
-$DASH_PARENT_PATH = "$($paths.OCULUS_PATH)\Support\oculus-dash\dash\bin"
+$DASH_PARENT_PATH = "$OCULUS_PATH\Support\oculus-dash\dash\bin"
 $DASH_PATH = "$DASH_PARENT_PATH\OculusDash.exe"
 $DASH_BACKUP_PATH = "$DASH_PARENT_PATH\OculusDash.exe.bak"
 $DL_PARENT_PATH = ".\OculusKiller"
@@ -62,7 +62,7 @@ if ($oculus_killer_hash.Hash -eq $current_dash_hash.Hash) {
         }
     }
 
-    # Rename original file and copy Homeless 2.0
+    # Rename original file and copy OculusKiller replacement
     Write-Host "[*] Creating backup..."
     Move-Item -Path $DASH_PATH -Destination $DASH_BACKUP_PATH
     Write-Host "[*] Installing OculusKiller..."
