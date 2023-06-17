@@ -49,7 +49,7 @@ Read more about it here: [LibreQuest/OculusKiller](https://github.com/LibreQuest
 
 There's a UI that let's you install/manage it easily: [Oculus VR Dash Manager](https://github.com/KrisIsBackAU/Oculus-VR-Dash-Manager)
 
-Use OculusKiller if you want to kill the Dash. (This will also disable passthrough and the grid!)
+Use OculusKiller if you want to kill the Dash. (This will also kill Passthrough and Guardian!)
 
 ### What is OpenComposite?
 
